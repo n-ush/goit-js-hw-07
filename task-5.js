@@ -1,13 +1,12 @@
-const refs = {
-  inputRef: document.querySelector("input"),
-  nameOutputRef: document.querySelector("#name-output"),
-};
+const inputRef = document.querySelector("#name-input");
+const nameOutputRef = document.querySelector("#name-output");
 
-refs.inputRef.addEventListener("input", changeName);
+inputRef.addEventListener("input", changeName);
 
 function changeName(event) {
-  refs.nameOutputRef.textContent = " "
-    ? "незнакомец"
-    : event.currentTarget.value;
-  console.log(event.currentTarget.value);
+  nameOutputRef.textContent = event.currentTarget.value;
+
+  if (event.currentTarget.value === "") {
+    nameOutputRef.textContent = "незнакомец";
+  }
 }
