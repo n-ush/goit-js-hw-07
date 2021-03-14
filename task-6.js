@@ -6,5 +6,9 @@ inputRef.addEventListener("blur", handleInputValidation);
 function handleInputValidation() {
   if (inputRef.value.length === validNumber) {
     inputRef.classList.add("valid");
-  } else inputRef.classList.add("invalid");
+    inputRef.classList.remove("invalid");
+  } else {
+    inputRef.classList.add("invalid");
+    inputRef.classList.remove("valid");
+  }
 }
